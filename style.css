@@ -1,0 +1,542 @@
+/* Variables - Colombian Colors */
+:root {
+    --col-yellow: #FCD116;
+    --col-blue: #003893;
+    --col-red: #CE1126;
+    --col-white: #ffffff;
+    --col-black: #1a1a2e;
+    --col-gray: #f4f4f4;
+    --col-dark-blue: #00256a;
+    --col-gold: #d4a800;
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    background: var(--col-white);
+    color: var(--col-black);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Header */
+.main-header {
+    background: linear-gradient(135deg, var(--col-yellow) 0%, var(--col-gold) 100%);
+    box-shadow: var(--shadow-md);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--col-blue);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--col-red);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover {
+    color: var(--col-red);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--col-yellow) 10%, var(--col-blue) 70%, var(--col-red) 90%);
+    padding: 120px 2rem 80px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(206, 17, 38, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 56, 147, 0.2) 0%, transparent 50%);
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--col-blue);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0 var(--col-white);
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    color: var(--col-red);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 0 var(--col-white);
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    color: var(--col-white);
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: var(--col-red);
+    color: var(--col-white);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(206, 17, 38, 0.4);
+}
+
+.btn-hero:hover {
+    background: var(--col-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 56, 147, 0.4);
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transform: rotate(2deg);
+    transition: var(--transition);
+}
+
+.hero-image img:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: var(--col-blue);
+    color: var(--col-white);
+    padding: 1.5rem;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    animation: pulse 2s infinite;
+}
+
+.hero-badge .star {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--col-yellow);
+}
+
+.hero-badge .year {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+.hero-badge .label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Section Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    display: inline-block;
+    background: var(--col-yellow);
+    color: var(--col-blue);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    color: var(--col-blue);
+    margin-bottom: 1rem;
+}
+
+.section-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--col-yellow), var(--col-blue), var(--col-red));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.section-header.light .section-subtitle {
+    background: var(--col-blue);
+    color: var(--col-yellow);
+}
+
+.section-header.light h2 {
+    color: var(--col-white);
+}
+
+.section-header.light .section-line {
+    background: linear-gradient(90deg, var(--col-white), var(--col-yellow));
+}
+
+/* History Section */
+.history {
+    background: var(--col-gray);
+    padding: 6rem 2rem;
+}
+
+.history-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.history-main {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.history-text {
+    font-size: 1.1rem;
+    color: var(--col-black);
+}
+
+.history-text p {
+    margin-bottom: 1.5rem;
+}
+
+.history-text strong {
+    color: var(--col-blue);
+}
+
+.history-text em {
+    color: var(--col-red);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.history-img img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.history-img figcaption {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--col-blue);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    background: var(--col-white);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--col-yellow);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--col-blue);
+    font-family: 'Oswald', sans-serif;
+}
+
+.stat-label {
+    color: var(--col-red);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+/* Stars Section */
+.stars {
+    background: linear-gradient(180deg, var(--col-blue) 0%, var(--col-dark-blue) 100%);
+    padding: 6rem 2rem;
+}
+
+.stars-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.player-card {
+    background: var(--col-white);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.player-img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.player-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.player-card:hover .player-img img {
+    transform: scale(1.1);
+}
+
+.player-card h3 {
+    color: var(--col-blue);
+    font-size: 1.3rem;
+    margin: 1.2rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.player-position {
+    color: var(--col-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.player-desc {
+    color: #555;
+    font-size: 0.95rem;
+    padding: 0 1.2rem 1.5rem;
+    line-height: 1.5;
+}
+
+/* Venues Section */
+.venues {
+    background: var(--col-white);
+    padding: 6rem 2rem;
+}
+
+.venues-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.venue-card {
+    background: var(--col-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.venue-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.venue-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.venue-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.venue-card:hover .venue-img img {
+    transform: scale(1.1);
+}
+
+.venue-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--col-yellow);
+    color: var(--col-blue);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.venue-info {
+    padding: 1.5rem;
+}
+
+.venue-info h3 {
+    color: var(--col-blue);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.venue-city {
+    color: var(--col-red);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.venue-info p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, var(--col-red) 0%, #a00d1e 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
